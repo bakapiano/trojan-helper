@@ -48,7 +48,7 @@ schedule.scheduleJob(rule, async () => {
     const { port } = readTrojanConfig()
     console.log(ip, port)
     for (var i = 0; i < PING_RETRY_COUNT; ++i) {
-        if (ping(ip, port)) {
+        if (await ping(ip, port)) {
             return
         }
     }
