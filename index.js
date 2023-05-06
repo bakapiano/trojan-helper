@@ -30,8 +30,8 @@ app.get("/config.yaml", (req, res) => {
 app.listen(8848)
 
 async function ping(ip, port) {
-    const res = await fetch(`https://www.jkapi.com/api/tcpck?ip=${ip}&port=${port}`)
-    return (await res.json()).status === "OPENNING"
+    const res = await fetch(`https://yuanxiapi.cn/api/port/?ip=${ip}&port=${port}`)
+    return (await res.json()).port[port] === "开启" 
 }
 
 async function getPublicIp() {
